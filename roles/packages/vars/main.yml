@@ -1,2 +1,29 @@
 ---
 # vars file for packages
+prerequisite_packages:
+  - vim
+  - git
+  - curl
+  - tmux
+  - unzip
+  - p7zip-full
+  - jq
+  - python3-dev
+  - pipx
+  - ntpdate
+  - nfs-common
+  - azure-cli
+  - npm
+  - gpg
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg-agent
+  - software-properties-common
+  - python3-pip
+  - python3-venv
+  - exiftool
+  - ffuf
+  - wfuzz
+  - yara
+  - neofetch

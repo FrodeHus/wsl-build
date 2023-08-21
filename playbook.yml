@@ -4,6 +4,4 @@
    - dotfiles
    - dev
    - tools
-  vars_files:
-    - vars/packages.yml
   
