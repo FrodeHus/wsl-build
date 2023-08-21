@@ -2,7 +2,7 @@
 
 Up and running quickly: `./bootstrap.sh`
 
-This playbook installs a set of tools I use on a daily basis. It is meant to be used on a fresh install of WSL.
+This playbook configures my dotfiles and installs a set of tools I use on a daily basis. It is meant to be used on a fresh install of WSL.
 
 ## Keybase & GitHub
 
