@@ -9,6 +9,8 @@ case $- in
 esac
 
 export PATH=~/go/bin:~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:$PATH
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+export GPG_TTY=`tty`
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options

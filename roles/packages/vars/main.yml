@@ -27,3 +27,4 @@ prerequisite_packages:
   - wfuzz
   - yara
   - neofetch
+  - mitmproxy
