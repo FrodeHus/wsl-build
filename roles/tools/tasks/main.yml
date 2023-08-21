@@ -2,3 +2,14 @@
 # tasks file for tools
 - ansible.builtin.import_tasks: go-tools.yml
 - ansible.builtin.import_tasks: github-client.yml
+
+- name: "Install Keybase"
+  become: true
+  become_method: sudo
+  command:
+    cmd: "{{ item }}"
+    creates: "/usr/bin/keybase"
+  with_items:
+    - "curl https://prerelease.keybase.io/keybase_amd64.deb -o /tmp/keybase_amd64.deb"
+    - "apt install /tmp/keybase_amd64.deb -y"
+    - "rm /tmp/keybase_amd64.deb"
