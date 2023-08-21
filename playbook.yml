@@ -1,0 +1,9 @@
+- hosts: wsl
+  roles:
+   - packages
+  #  - dotfiles
+   - dev
+   - tools
+  vars_files:
+    - vars/packages.yml
+  

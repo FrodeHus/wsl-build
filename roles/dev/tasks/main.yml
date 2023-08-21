@@ -1,0 +1,4 @@
+---
+# tasks file for dev
+- ansible.builtin.import_tasks: golang.yml
+- ansible.builtin.import_tasks: dotnet.yml

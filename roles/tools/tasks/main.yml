@@ -1,0 +1,3 @@
+---
+# tasks file for tools
+- ansible.builtin.import_tasks: go-tools.yml

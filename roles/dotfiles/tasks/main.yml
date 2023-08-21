@@ -1,0 +1,10 @@
+---
+- name: "Install Tmux plugins (remember to do Prefix+I to install plugins once Tmux is running)"
+  git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: ~/.tmux/plugins/tpm
+
+- name: "Copying Tmux Config"
+  copy:
+    src: "{{ role_path }}/files/.tmux.conf"
+    dest: "{{ ansible_env.HOME }}"

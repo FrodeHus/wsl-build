@@ -1,0 +1,8 @@
+---
+- name: "Install .NET"
+  apt:
+    name:
+      - dotnet-sdk-7.0
+    state: present
+  become: true
+  become_method: sudo

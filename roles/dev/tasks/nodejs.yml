@@ -1,0 +1,15 @@
+---
+- name: "Installing nodejs_18.x repository"
+  shell:
+    cmd: curl -sL https://deb.nodesource.com/setup_18.x | bash
+    creates: /usr/bin/npm
+  become: true
+  become_method: sudo
+
+- name: "Install NodeJS"
+  apt:
+    name:
+      - npm
+    state: present
+  become: true
+  become_method: sudo

@@ -1,0 +1,7 @@
+---
+- name: "install httpx"
+  shell: go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+- name: "install anew"
+  shell: go install -v github.com/tomnomnom/anew@latest
+
+
