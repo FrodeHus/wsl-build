@@ -1,7 +1,7 @@
 - hosts: wsl
   roles:
    - packages
-  #  - dotfiles
+   - dotfiles
    - dev
    - tools
   vars_files:
