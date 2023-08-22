@@ -1,7 +1,6 @@
 ---
 # tasks file for tools
 - ansible.builtin.import_tasks: go-tools.yml
-- ansible.builtin.import_tasks: github-client.yml
 
 - name: "Install Keybase"
   become: true

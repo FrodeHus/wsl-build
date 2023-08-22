@@ -11,3 +11,4 @@
   with_items:
     - ".tmux.conf"
     - ".bashrc"
+    - ".bash_aliases"

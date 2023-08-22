@@ -1,0 +1,38 @@
+---
+- name: Install Git client
+  become: true
+  become_method: sudo
+  ansible.builtin.package:
+    name:
+      - git
+    state: latest
+
+- name: Get PGP signing key
+  shell: 'gpg --list-secret-keys --keyid-format long --list-options show-uid-validity | grep "ultimate" -B2 | head -n1 | sed -n "s/.*\/\([A-Z0-9][^ ]*\)\(.*\)/\1/p"'
+  register: gpg_key
+
+- name: Add Git aliases to .bash_aliases
+  blockinfile:
+    dest: "{{ ansible_env.HOME }}/.bash_aliases"
+    block: |
+      alias gp='git push'
+      alias gl='git pull'
+      alias gcm='git checkout main'
+      alias g='git'
+      alias gpsup='git push --set-upstream origin $(git branch --show-current)'
+      alias gpristine='git reset --hard && git clean --force -dfx'
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - git_aliases"
+    insertbefore: BOF
+    create: yes
+
+- name: Configure Git
+  ansible.builtin.command: git config --global {{ item.field }} "{{ item.value }}"
+  when: item.value != ''
+  loop:
+    - { field: user.email, value: "{{ git_email }}" }
+    - { field: user.name, value: "{{ git_name }}" }
+    - {
+        field: commit.gpgsign,
+        value: "{{ (gpg_key.stdout != '') | ternary(true, false) }}",
+      }
+    - { field: user.signingkey, value: "{{ gpg_key.stdout }}" }
