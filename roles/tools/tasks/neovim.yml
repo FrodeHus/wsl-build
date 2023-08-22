@@ -22,3 +22,19 @@
         state: absent
   become: true
   become_method: sudo
+
+- name: "Configure NeoVim"
+  block:
+    - name: "Install NvChad"
+      git:
+        repo: "https://github.com/NvChad/NvChad.git"
+        dest: "{{ ansible_env.HOME }}/.config/nvim"
+        depth: 1
+    - name: Add NVIM aliases to .bash_aliases
+      blockinfile:
+        dest: "{{ ansible_env.HOME }}/.bash_aliases"
+        block: |
+          alias vim='nvim'
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - nvim_aliases"
+        insertbefore: EOF
+        create: yes

@@ -12,7 +12,6 @@ prerequisite_packages:
   - ntpdate
   - nfs-common
   - azure-cli
-  - npm
   - gpg
   - apt-transport-https
   - ca-certificates
@@ -22,8 +21,5 @@ prerequisite_packages:
   - python3-pip
   - python3-venv
   - exiftool
-  - ffuf
-  - wfuzz
-  - yara
   - neofetch
   - mitmproxy
