@@ -87,7 +87,7 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*|tmux*)
     VPN=$(ps -ef | grep 'openvpn [eu|au|us|sg]'|tail -1| rev| awk '{print $1}'|rev |sed 's/\..*$//g')
-    IP=$(ip -4 -o addr show enp0s3|awk '{print $4}'|sed 's/\/.*$//g')
+    IP=$(ip -4 -o addr show eth0|awk '{print $4}'|sed 's/\/.*$//g')
     if [ ! -z "$VPN" ]; then
       IP=$(ip -4 -o addr show tun0|awk '{print $4}'|sed 's/\/.*$//g')
     fi
@@ -120,6 +120,7 @@ alias _i='sudo -i'
 
 alias gp='git push'
 alias gl='git pull'
+alias gcm='git checkout main'
 alias g='git'
 alias gpsup='git push --set-upstream origin $(git branch --show-current)'
 alias gpristine='git reset --hard && git clean --force -dfx'

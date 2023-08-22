@@ -4,7 +4,10 @@
     repo: https://github.com/tmux-plugins/tpm.git
     dest: ~/.tmux/plugins/tpm
 
-- name: "Copying Tmux Config"
+- name: "Copying dotfiles"
   copy:
-    src: "{{ role_path }}/files/.tmux.conf"
+    src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ ansible_env.HOME }}"
+  with_items:
+    - ".tmux.conf"
+    - ".bashrc"
