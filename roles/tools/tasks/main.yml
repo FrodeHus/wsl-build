@@ -3,3 +3,4 @@
 - ansible.builtin.import_tasks: go-tools.yml
 - ansible.builtin.import_tasks: neovim.yml
 - ansible.builtin.import_tasks: keybase.yml
+- ansible.builtin.import_tasks: 1password.yml
