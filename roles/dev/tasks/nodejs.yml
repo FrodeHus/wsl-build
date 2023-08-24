@@ -9,7 +9,7 @@
 - name: "Install NodeJS"
   apt:
     name:
-      - npm
+      - nodejs
     state: present
   become: true
   become_method: sudo

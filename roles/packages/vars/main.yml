@@ -2,6 +2,7 @@
 # vars file for packages
 prerequisite_packages:
   - vim
+  - xclip
   - curl
   - tmux
   - unzip
@@ -11,7 +12,6 @@ prerequisite_packages:
   - pipx
   - ntpdate
   - nfs-common
-  - azure-cli
   - gpg
   - apt-transport-https
   - ca-certificates

@@ -1,0 +1,3 @@
+---
+# tasks file for operations
+- ansible.builtin.import_tasks: azure-cli.yml
