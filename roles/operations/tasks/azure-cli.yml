@@ -18,10 +18,9 @@
     - name: "Get distribution release"
       set_fact:
         AZ_REPO: "{{ ansible_distribution_release }}"
-        ARCH: "{{ ansible_architecture }}"
     - name: "Add the Microsoft azure-cli apt repository"
       apt_repository:
-        repo: "deb [arch={{ ARCH }} signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ {{ AZ_REPO }} main"
+        repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ {{ AZ_REPO }} main"
         state: present
     - name: "Install Azure CLI"
       apt:

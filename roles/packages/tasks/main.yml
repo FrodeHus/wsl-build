@@ -1,6 +1,6 @@
 ---
 # tasks file for packages
-- ansible.builtin.import_tasks: microsoft-repo.yml
+# - ansible.builtin.import_tasks: microsoft-repo.yml // This is might not be needed with official dotnet versions (part of regular repositories)
 
 - name: update package list
   become: true
