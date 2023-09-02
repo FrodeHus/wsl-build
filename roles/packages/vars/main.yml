@@ -23,3 +23,4 @@ prerequisite_packages:
   - exiftool
   - neofetch
   - mitmproxy
+  - p7zip-full
